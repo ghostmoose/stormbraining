@@ -1,4 +1,4 @@
-import { NEW_IDEA, GET_ONE_BOARD, UP_VOTE } from '../actions/index';
+import { NEW_IDEA, GET_ONE_BOARD, UP_VOTE } from '../actions/action_types';
 
 const INITIAL_STATE = { title: '', ideas: [] };
 

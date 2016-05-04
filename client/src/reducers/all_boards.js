@@ -1,4 +1,4 @@
-import { NEW_BOARD, GET_BOARDS } from '../actions/index';
+import { NEW_BOARD, GET_BOARDS } from '../actions/action_types';
 
 const INITIAL_STATE = [];
 

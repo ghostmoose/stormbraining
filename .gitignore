@@ -20,3 +20,5 @@ crashlytics-build.properties
 .idea/
 *.iml
 rethinkdb_data/
+.floo
+.flooignore

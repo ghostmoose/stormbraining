@@ -1,18 +1,12 @@
 import axios from 'axios';
-
-export const NEW_IDEA = 'NEW_IDEA';
-export const GET_ONE_IDEA = 'GET_ONE_IDEA';
-export const UP_VOTE = 'UP_VOTE';
-export const NEW_BOARD = 'NEW_BOARD';
-export const GET_BOARDS = 'GET_BOARDS';
-export const GET_ONE_BOARD = 'GET_ONE_BOARD';
+import * as types from './action_types';
 
 const ROOT_URL = '/api';
 
 export function newIdea(idea, id) {
   const request = axios.post(`${ROOT_URL}/boards/${id}/ideas`, { content: idea });
   return {
-    type: NEW_IDEA,
+    type: types.NEW_IDEA,
     payload: request,
   };
 }
@@ -20,7 +14,7 @@ export function newIdea(idea, id) {
 export function getOneIdea(id, ideaId) {
   const request = axios.get(`${ROOT_URL}/boards/${id}/ideas/${ideaId}`);
   return {
-    type: GET_ONE_IDEA,
+    type: types.GET_ONE_IDEA,
     payload: request,
   };
 }
@@ -28,7 +22,7 @@ export function getOneIdea(id, ideaId) {
 export function upVote(id, ideaId) {
   const request = axios.post(`${ROOT_URL}/boards/${id}/ideas/${ideaId}/upvotes`);
   return {
-    type: UP_VOTE,
+    type: types.UP_VOTE,
     payload: request,
   };
 }
@@ -36,7 +30,7 @@ export function upVote(id, ideaId) {
 export function newBoard(title) {
   const boardRequest = axios.post(`${ROOT_URL}/boards`, { title });
   return {
-    type: NEW_BOARD,
+    type: types.NEW_BOARD,
     payload: boardRequest,
   };
 }
@@ -44,7 +38,7 @@ export function newBoard(title) {
 export function getBoards() {
   const request = axios.get(`${ROOT_URL}/boards`);
   return {
-    type: GET_BOARDS,
+    type: types.GET_BOARDS,
     payload: request,
   };
 }
@@ -52,7 +46,7 @@ export function getBoards() {
 export function getOneBoard(id) {
   const request = axios.get(`${ROOT_URL}/boards/${id}`);
   return {
-    type: GET_ONE_BOARD,
+    type: types.GET_ONE_BOARD,
     payload: request,
   };
 }
