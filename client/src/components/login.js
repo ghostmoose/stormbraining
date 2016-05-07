@@ -55,9 +55,9 @@ export default class Login extends Component {
   render() {
     const { isAuthenticated, errorMessage } = this.props;
     return (
-      <div>
+      <div className="landing">
         <div>
-          <h1>Stormbraining</h1>
+          <h1 className="title">Stormbraining</h1>
         </div>
         <div>
           {!isAuthenticated &&
