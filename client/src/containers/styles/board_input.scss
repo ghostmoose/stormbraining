@@ -1,0 +1,14 @@
+.board-input-container {
+  text-align: center;
+  .board-input {
+    width: 75%;
+    &:focus {
+      border-bottom: 2px solid orange;
+    }
+  }
+  .board-button {
+    background-color: white;
+    margin-left: 5%;
+    width: 10%;
+  }
+}

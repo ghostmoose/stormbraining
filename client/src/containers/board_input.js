@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { newBoard } from '../actions/index';
 
+import './styles/board_input.scss';
+
 class BoardInput extends Component {
 
   static propTypes = {
@@ -29,19 +31,19 @@ class BoardInput extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="input-group">
-        <input
-          placeholder="Name your brainstorm"
-          className="form-control"
-          value={this.state.board}
-          onChange={this.onInputChange}
-        />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-        </span>
-      </form>
+      <div className="board-input-container">
+        <form onSubmit={this.onFormSubmit} className="mui-input">
+          <input
+            placeholder="Name your brainstorm"
+            className="mui-input board-input"
+            value={this.state.board}
+            onChange={this.onInputChange}
+          />
+            <button type="submit" className="mui-flat-button board-button">
+              Submit
+            </button>
+        </form>
+      </div>
     );
   }
 }
