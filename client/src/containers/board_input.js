@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { newBoard } from '../actions/index';
 
-import '.styles/board_input.scss';
+import './styles/board_input.scss';
 
 class BoardInput extends Component {
 
