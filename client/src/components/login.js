@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import { login, lockSuccess, lockError, receiveLogout } from '../actions/auth_actions';
 import { browserHistory } from 'react-router';
 
+import './styles/login.scss';
+
 export default class Login extends Component {
 
 
@@ -57,14 +59,16 @@ export default class Login extends Component {
     return (
       <div className="landing">
         <div>
-          <h1 className="title">Stormbraining</h1>
+          <h1 className="title">
+            Stormbraining
+          </h1>
         </div>
         <div>
           {!isAuthenticated &&
             <button
               errorMessage={errorMessage}
               onClick={this.onLogin}
-              className="btn btn-primary"
+              className="mui-flat-button mui-touch-ripple mui-ripple-circle-inner login"
             >
               Login
             </button>
@@ -73,7 +77,7 @@ export default class Login extends Component {
           {isAuthenticated &&
             <button
               onClick={this.onLogout}
-              className="btn btn-primary"
+              className="mui-flat-button mui-touch-ripple mui-ripple-circle-inner logout"
             >
               Logout
             </button>
