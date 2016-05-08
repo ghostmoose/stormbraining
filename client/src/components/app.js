@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-import '.styles/app.scss';
+import './styles/app.scss';
 
 export default class App extends Component {
 
