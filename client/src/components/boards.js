@@ -2,7 +2,7 @@ import React from 'react';
 import BoardInput from '../containers/board_input';
 import BoardList from '../containers/board_list';
 
-import '.styles/boards.scss';
+import './styles/boards.scss';
 
 const Boards = () => (
   <div>
