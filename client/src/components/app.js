@@ -35,6 +35,7 @@ export const muiTheme = getMuiTheme({
 const styles = {
   title: {
     float: 'left',
+    color: 'white',
   },
 };
 
@@ -80,9 +81,13 @@ export default class App extends Component {
         <div>
           <AppBar
             style={{ margin: '0px', paddingTop: '10px', paddingBottom: '5px' }}
-            title={<span style={styles.title}>Stormbraining</span>}
+            title={<Link to="/" style={styles.title}>Stormbraining</Link>}
             zDepth={3}
-            iconElementLeft={<img src="../brainstorm.gif" style={{ width: '40px', margin: '0px 10px' }} /> }
+            iconElementLeft={
+              <Link to="/">
+                <img src="../brainstorm.gif" style={{ width: '40px', margin: '0px 10px' }} />
+              </Link>
+            }
             iconElementRight={
               <Tabs>
                 <Tab
