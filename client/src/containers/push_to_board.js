@@ -14,6 +14,10 @@ class PushToBoard extends Component {
     pushTimedBoard: PropTypes.func.isRequired,
   }
 
+  static contextTypes = {
+    muiTheme: PropTypes.object.isRequired,
+  }
+
   constructor(props) {
     super(props);
     this.state = { open: false };
@@ -34,6 +38,25 @@ class PushToBoard extends Component {
 
   handleClose = () => {
     this.setState({ open: false });
+  }
+
+  renderSelectionStatus() {
+    const accentColor = this.context.muiTheme.palette.accent1Color;
+    const selectionCount = this.props.timedBoard.timedIdeas.filter(idea => idea.selected).length;
+    if (selectionCount) {
+      return (
+        <div>
+          <p>You have <span style={{ color: accentColor }}>{selectionCount}</span> idea(s) selected.</p>
+          <p>This will end your session and push your selected ideas back to the original board. Are you sure?</p>
+        </div>
+      );
+    }
+    return (
+      <div>
+        <p style={{ color: accentColor }}>You have {selectionCount} ideas selected.</p>
+        <p>This will end your session without pushing any ideas back to the original board. Are you sure?</p>
+      </div>
+    );
   }
 
   render() {
@@ -64,10 +87,7 @@ class PushToBoard extends Component {
           open={this.state.open}
           onRequestClose={this.handleClose}
         >
-          <br />
-          This will end your session and push your selected ideas back to the original board.
-          Are you sure?
-          <br />
+          {this.renderSelectionStatus()}
         </Dialog>
       </span>
     );
