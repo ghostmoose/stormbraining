@@ -1,10 +1,11 @@
+const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
 
-  entry: ['bootstrap-loader/extractStyles'],
+  entry: [path.join(__dirname, '../src/index')],
 
   output: {
     publicPath: 'dist/',
